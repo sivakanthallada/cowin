@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+   body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #4080bf;
+   }
+   * {
+      box-sizing: border-box;
+   }
+   .card {
+      color: black;
+      float: left;
+      width: 45%;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      height: 300px;
+      margin-left: 2%;
+     transition: width 0.6s,height 0.6s;
+
+   }
+   .img{
+      width: 40%;
+      height: 12vw;
+      float: right;
+border:5px outset black;
+   }
+   .card:hover{
+      box-shadow: 10px 10px black;
+      width:46.5%;
+height:315px;
+   }
+.card:hover .img{
+animation:rotation 1s;
+}
+@keyframes rotation{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+   .card p {
+      font-size: 1.26vw;
+   }
+   .cardContainer:after {
+      content: "";
+      display: table;
+      clear: both;
+   }
+   @media screen and (max-width:auto) {
+      .card {
+         width: 100%;
+      }
+   }
+   h2{
+      font-size:35px;
+      color:white;
+      font-weight:900;
+      animation-name:example;
+      animation-duration:1s;
+animation-delay:0.2s;
+   }
+@keyframes example{
+0%{font-size:35px;}
+50%{font-size:40px;}
+100%{font-size:35px;}
+}
+   button{
+      color :white;
+      background-color:black;
+      width: auto;
+      padding: 5px;
+      font-size: 20px;
+    float: right;
+   }
+   h1{
+      color: red;
+   }
+</style>
+</head>
+<body>
+   <a href="homee.html"><button>Back</button></a>
+<center><h2>Vaccination centers</h2></center>
+<h4 style="margin-left:5%;color:blue;"></h4>
+<div class="cardContainer">
+<div class="card" style="background-color:white;">
+<h1>Gajjar Bhavan</h1>
+<img src="Gajjar.jpg" class="img" >
+<p><b>Name:</b>Gajjar Bhavan<br>
+<b>Place:</b>Ground floor, Medical room<br>
+<b>Contact:</b> 0261 220 1606<br>
+<b>Email:</b> cw1_gajjar@svnit.ac.in<br>
+<b>Covaxin:</b> Available<br>
+ <b>Covishield:</b>Available<br>
+only for boys</p>
+</div>
+<div class="card" style="background-color:white;">
+<h1>Mother Teresa Bhavan</h1>
+<img src="mtb.jfif" class="img">
+<p><b>Name:</b>Mother Teresa Bhavan<br>
+<b>Place:</b>First floor, Medical room<br>
+<b>contact:</b> 99044 02956<br>
+<b>Email:</b> cw1_mtb@svnit.ac.in<br>
+<b>Covaxin:</b> Available<br>
+ <b>Covishield:</b>Available<br>
+only for girls</p>
+</div>
+</div><br>
+<div class="cardContainer">
+<div class="card" style="background-color:white;">
+<h1>Raman Bhavan</h1>
+<img src="raman.jfif" class="img">
+<p><b>Name:</b>Raman Bhavan<br>
+<b>Place:</b>First floor, Medical room<br>
+<b>contact:</b> 0261 220 4366<br>
+<b>Email:</b> cw1_raman@svnit.ac.in<br>
+<b>Covaxin:</b> Available<br>
+ <b>Covishield:</b>Available<br>
+only for boys</p>
+</div>
+<div class="card" style="background-color:white;">
+<h1>Health Center</h1>
+<img src="hc.jpg" class="img">
+<p><b>Name:</b>Svnit Health center<br>
+<b>Place:</b>Health Center<br>
+<b>contact:</b> (0261) 2201600<br>
+<b>Email:</b> cw1_raman@svnit.ac.in<br>
+<b>Covaxin:</b> Available<br>
+ <b>Covishield:</b>Available<br>
+both for boys and girls</p>
+</div>
+</div>
+</div>
+<br><br>
+</body>
+</html>

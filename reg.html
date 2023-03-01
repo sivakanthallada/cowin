@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+background-color:#e6f9ff;
+}
+h2{
+margin-top:2%;
+font-family:"verdana";
+font-size:2vw;
+}
+h3
+	{text-align:center;
+		font-family:"verdana";
+                font-size:1.8vw;
+		font-weight:bold;
+		line-height:40px;
+	}
+.sub{
+margin-left:2%;
+color:#0086b3;
+}
+.sub:after
+	{
+		content:"";
+		width:180px;
+		height:8px;
+		display:block;
+		background:#0086b3;
+		border-radius:4px;
+		margin-top:25px;
+	}
+.first1{
+margin:1%;
+}
+.left{
+width:35%;
+font-size:1.5vw;
+float:left;
+margin:10px 0% 10px 5%;
+}
+.right{
+width:35%;
+font-size:1.5vw;
+float:right;
+margin:10px 10% 10px 0%;
+}
+button{
+margin:10px 0 10px 47.4%;
+opacity:0.8;
+}
+button:hover{
+opacity:1;
+}
+.shade{
+width:80%;
+height:540px;
+background-color:#ccf2ff;
+border-radius:20px;
+margin:4% 10% 10px 10%;
+box-shadow: 10px 10px 5px rgba(0,0,0,0.7);
+}
+</style>
+</head>
+<body>
+<center><h2><b>Vaccine Registration</b></h2></center>
+<div class="shade">
+<h3 >Register</h3>
+<div class="sub" style="font-size:1.6vw"><b>Fill These Details</b></div>
+<form  onsubmit="otpgeneration()">
+<div class="first1">
+<div class="left">
+<label for="name"><b>Full Name</b></label><br/>
+  <input type="text" class="input" id="name" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="surname" placeholder="Enter Nmae" required>
+</div>
+<div class="right">
+<label for="des" ><b>Aadhar No.</b></label><br/>
+  <input type="text" id="aadhar" class="input" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="lastname" placeholder="Enter Aadhar number" 
+pattern="[0-9]{12}" required>
+</div>
+</div>
+<div class="first1">
+<div class="left">
+<label for="email"><b>Email Id</b></label><br/>
+  <input type="email" class="input" id="email" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="email" placeholder="Enter Email" required>
+</div>
+<div class="right">
+<label for="phone" ><b>Phone No.</b></label><br/>
+  <input type="tel" id="phone" class="input" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="lastname" placeholder="Enter Phone Number" required>
+</div>
+</div>
+<div class="first1">
+<div class="left">
+<label for="admino"><b>Admission No.</b></label><br/>
+  <input type="text" class="input" id="admi" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="surname" placeholder="Enter Admission Number" required>
+</div>
+<div class="right">
+<label for="gender"><b>Gender</b></label><br/>
+  <input type="text" class="input" id="gender" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="gender" placeholder="male / female" required>
+</div>
+</div>
+<div class="first1">
+<div class="left">
+<label for="type"><b>Vaccine Type</b></label><br/>
+  <select  class="input" id="type" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="type" >
+<option value="">--Select--</option>
+<option value="covaxin">COVAXIN</option>
+<option value="covishield">COVISHIELD</option>
+</select>
+</div>
+<div class="right">
+<label for="date" ><b>Date</b></label><br/>
+ <input type="text" class="input" id="date" 
+style="width:110%;height:30px;margin:2px 0 2px 10%;" name="date" placeholder="DD-MM-YYYY" readonly>
+</div>
+<button style="width:8vw;height:30px;font-size:1.4vw;background-color:#0086b3;color:white;" type="submit">Submit</button>
+</form>
+</div>
+<script>
+document.getElementById("admi").onblur = function(){
+var admi=document.getElementById("admi").value;
+var admino=admi.substring(5 ,3);
+var year=admi.substring(3,1);
+if(year=="20"|| year=="19" ){
+if(admino=="CS"){
+document.getElementById("date").value="10-08-2021";}
+else if(admino=="EC"){document.getElementById("date").value="11-08-2021";}
+else if(admino=="EE"){document.getElementById("date").value="12-08-2021";}
+else{document.getElementById("date").value="13-08-2021";}}
+else{
+if(admino=="CS"){
+document.getElementById("date").value="14-08-2021";}
+else if(admino=="EC"){document.getElementById("date").value="15-08-2021";}
+else if(admino=="EE"){document.getElementById("date").value="16-08-2021";}
+else{document.getElementById("date").value="17-08-2021";}}
+}
+
+function otpgeneration(){
+var name=document.getElementById("name").value;
+var str=document.getElementById("aadhar").value;
+var change=str%10000;
+var otp;
+if(change==0){otp="0000";}
+else{otp=change;}
+alert("Congrats! "+ name + ". Your registration is successful.\n"+" Your OTP for vaccination is : "+ otp +".\n" + "Please produce this otp to concerned autority while getting vaccinated.");
+}
+</script>
+</body>
+</html>
